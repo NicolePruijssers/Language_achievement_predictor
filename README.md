@@ -1,2 +1,14 @@
-# language_dropout_predictor_model.ipynb
-Language_dropout_predictor_model.ipynb This project is based on a synthetic dataset from Kaggle which contains the feature of  the learning process and the traits of a person learning a language, as well as how successful they were in regards to learning the language. The aim is to most accurately predict the language level a learner will attain.
+Language_achievement_predictor
+
+This python machine learning project is built on a synthetic Kaggle dataset, providing data on learner's attributes and types of learning efforts of individuals. Keep in mind that a synthetic dataset, while ensuring the personal privacy of test persons, is a approximation of the reality as measured by the original dataset. Besides any shortcomings in the data collected in reality, the synthetic nature of the dataset introduces further noise. This project should be taken as a theoretical model and exploration of the possibilities. This project is in no way intended to serve for real-use cases.
+The aim is to predict the language proficiency levels which individual learners will achieve, based on historical data. The proficiency levels are defined in terms of the CEFRL (Common European Framework for References for Languages) definitions.
+For those unfamiliar with the framework, more information is found on: https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages
+
+Several models were tested on the training data to determine which yielded the most accurate predictions. The highest accuracy was achieved through gradient boosting. However, this yielded an accuracy of only 0.61. In other words, only 61% of the predictions matched the actual value. This is not sufficient for a machine learning model. It must, however, be noted that the CEFRL levels are ranges that follow each other. Because of this, it was also calculated how far off the predictions were on average. Several of the models yielded an average error of 0.46, meaning that on average, the predictions were off by half an CEFRL level.The confusion matrices further support that while the models often predicted the level wrong, it was seldom far off. Gradient boosting remains the most effective model even after this change in perspective. 
+
+In conclusion, while none of the tested models trained on this dataset can be used to predict the CEFRL level that will be achieved in high accuracy, it can be used to give language learners a sense of what they can expect with their background and training strategy. However, a more important observation was made during the process. The influence weight of each trait was analyzed to finetune the model. During this analysis, all models showed the same result. The infleunce of the amount of hours invested in the learning process far outweighed that of any other feature. This includes the features age, already mastered languages, and similarity of target language to native language, all often cited as major factors in the success or failure of learning a language.
+In short, while the models and dataset only yielded moderate results in predicting final achieved level, it showed with good certainty that effort pays off!
+
+
+
+
